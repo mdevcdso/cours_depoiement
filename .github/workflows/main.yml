@@ -1,5 +1,8 @@
 name: Bro
-on: [push]
+on: 
+  push: 
+    branches:
+      - develop
 jobs:
   say-hello:
     runs-on: ubuntu-latest
