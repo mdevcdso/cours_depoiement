@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="text_view_static_text">HELLO 2</string>
+    <string name="main_activity_image_view_accessibility_text">Image de voiture</string>
+    <string name="main_activity_button_button1">BUTTON1</string>
+    <string name="main_activity_button_button2">BUTTON2</string>
+    <string name="static_date_text">Friday, 20 January</string>
+    <string name="activity_main_text_sunny">Sunny</string>
+    <string name="main_activity_text_degres">31°</string>
+    <string name="main_activity_text_daily_summary">Daily Summary</string>
+</resources>
