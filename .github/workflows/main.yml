@@ -1,0 +1,18 @@
+name: Bro # Nom du workflow
+on: [push] # Evenement
+jobs: # Etapes a appliquer
+  say-hello: # Nom du job
+    runs-on: ubuntu-latest # L'env
+    steps:
+      - run: echo "Hello, Bro"
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: ls
+      - uses: actions/checkout@v4.2.2
+  say-good-bye: 
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Bye Bro"
+    
+  
