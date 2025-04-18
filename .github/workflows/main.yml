@@ -1,18 +1,25 @@
-name: Bro # Nom du workflow
-on: [push] # Evenement
-jobs: # Etapes a appliquer
-  say-hello: # Nom du job
-    runs-on: ubuntu-latest # L'env
+name: Bro
+on: [push]
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, Bro"
+      - run: echo "Hello, Bro!"
   build:
     runs-on: ubuntu-latest
-    steps: 
-      - run: ls
-      - uses: actions/checkout@v4.2.2
-  say-good-bye: 
+    steps:
+     - uses: actions/checkout@v4.2.2
+     - run: ls
+     - run: echo "Ce workflow a été trigger sur un événement de type ${{ github.event_name }}"
+     - run: echo " ${{ github.actor }} | Utilisateur ayant déclenché l’action |"
+     - run: echo " ${{ github.sha }} | SHA du commit déclencheur |"
+     - run: echo " ${{ github.workflow }} | Nom du workflow en cours |"
+     - run: echo " ${{ runner.arch }} | Architecture CPU du runner |"
+     - run: echo " ${{ env.HOME }} | Répertoire personnel dans le runner |"
+  android-app-build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Bye Bro"
-    
-  
+    - name: Build with Gradle
+      # You may pin to the exact commit or the version.
+      # uses: gradle/actions@06832c7b30a0129d7fb559bcc6e43d26f6374244
+      uses: gradle/actions@v4.3.1
